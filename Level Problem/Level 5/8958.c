@@ -41,7 +41,7 @@ static int score(char str[]) {
     return tot_score;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int i, n_test;
     char str[MAX_LEN];
     

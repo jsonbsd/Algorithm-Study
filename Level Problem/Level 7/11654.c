@@ -19,7 +19,10 @@
 #include <math.h>
 
 int main(int argc, const char *argv[]) {
-    printf("Hello World!\n");
+    char input_char;
+    
+    scanf("%c", &input_char);
+    printf("%d\n", input_char);
     
     return 0;
 }

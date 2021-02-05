@@ -18,8 +18,22 @@
 #include <errno.h>
 #include <math.h>
 
+#define FLUSH_STDIN() do {} while(getchar() != '\n')
+
 int main(int argc, const char *argv[]) {
-    printf("Hello World!\n");
+    int i, sum;
+    size_t len;
+    
+    scanf("%zd", &len);
+    FLUSH_STDIN();
+    
+    i = sum = 0;
+    while (i < len) {
+        sum += (getchar() - '0');
+        ++i;
+    }
+    
+    printf("%d\n", sum);
     
     return 0;
 }

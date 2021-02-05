@@ -18,7 +18,7 @@
 #include <errno.h>
 #include <math.h>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int8_t a, b;
     
     scanf("%hhd %hhd", &a, &b);

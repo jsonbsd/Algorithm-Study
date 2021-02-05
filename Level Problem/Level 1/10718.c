@@ -18,7 +18,7 @@
 #include <errno.h>
 #include <math.h>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     printf("강한친구 대한육군\n강한친구 대한육군\n");
     
     return 0;

@@ -18,7 +18,7 @@
 #include <errno.h>
 #include <math.h>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     /* Print special characters(\, ") as escape sequences.*/
     printf("|\\_/|\n");
     printf("|q p|   /}\n");

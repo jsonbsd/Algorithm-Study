@@ -18,7 +18,7 @@
 #include <errno.h>
 #include <math.h>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int num1, num2, result;
     
     scanf("%d %d", &num1, &num2);

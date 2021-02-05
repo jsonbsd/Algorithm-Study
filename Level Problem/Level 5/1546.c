@@ -22,7 +22,7 @@ static inline double fix_sum(double sum, double max) {
     return sum / max * 100;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int i, n_score, score, max_score;
     double sum;
     

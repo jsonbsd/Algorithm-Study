@@ -32,7 +32,7 @@ static int d(int num) {
     return sum;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     bool self_num[PRINT_LEN];
     int i;
     

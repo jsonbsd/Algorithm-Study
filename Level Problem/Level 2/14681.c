@@ -18,7 +18,7 @@
 #include <errno.h>
 #include <math.h>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int16_t x, y;
     
     scanf("%hd %hd", &x, &y);

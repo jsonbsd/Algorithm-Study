@@ -26,7 +26,7 @@ static inline int right_digit(int num) {
     return num % 10;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int init_n, next_n, n_cycle;
     
     scanf("%d", &init_n);

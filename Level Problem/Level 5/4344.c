@@ -48,7 +48,7 @@ static double per_above_avg(void) {
     return GET_AVG_DOUBLE(sum, n_score) * 100.0;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[]) {
     int i, n_test;
     
     scanf("%d", &n_test);

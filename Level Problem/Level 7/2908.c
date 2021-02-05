@@ -18,32 +18,26 @@
 #include <errno.h>
 #include <math.h>
 
-#define two_digit_diff(num) (((num) % 10) - ((num) / 10 % 10))
-
-bool is_han_num(int num) {
-    while (num >= 100) {
-        if (two_digit_diff(num) != two_digit_diff(num / 10))
-            return false;
+static int reverse_num(int num) {
+    int rev_num;
+    
+    rev_num = 0;
+    while (num) {
+        rev_num = rev_num * 10 + num % 10;
         num /= 10;
     }
     
-    return true;
+    return rev_num;
 }
 
 int main(int argc, const char *argv[]) {
-    int i, n, n_han_num;
+    int num1, num2, rev_num1, rev_num2;
     
-    scanf("%d", &n);
+    scanf("%d %d", &num1, &num2);
     
-    i = 1;
-    n_han_num = 0;
-    while (i <= n) {
-        if (is_han_num(i))
-            ++n_han_num;
-        ++i;
-    }
-    
-    printf("%d\n", n_han_num);
+    rev_num1 = reverse_num(num1);
+    rev_num2 = reverse_num(num2);
+    printf("%d\n", rev_num1 > rev_num2 ? rev_num1 : rev_num2);
     
     return 0;
 }
