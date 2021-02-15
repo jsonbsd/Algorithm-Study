@@ -18,19 +18,23 @@
 #include <errno.h>
 #include <math.h>
 
-#define ENOBEP -1
-
-static int bep(int fix, int prod, int sale) {
-    if (sale <= prod)
-        return ENOBEP;
-    return fix / (sale - prod) + 1;
+static int n_people(int level, int room) {
+    if (level == 0 || room == 1) {
+        return room;
+    } else {
+        return n_people(level, room - 1) + n_people(level - 1, room);
+    }
 }
 
 int main(int argc, const char *argv[]) {
-    int a, b, c;
+    int level, room;
+    int n_test;
     
-    scanf("%d %d %d", &a, &b, &c);
-    printf("%d\n", bep(a, b, c));
+    scanf("%d", &n_test);
+    for (; n_test; --n_test) {
+        scanf("%d %d", &level, &room);
+        printf("%d\n", n_people(level, room));
+    }
     
     return 0;
 }
