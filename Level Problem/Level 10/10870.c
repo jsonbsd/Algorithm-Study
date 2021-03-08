@@ -18,18 +18,18 @@
 #include <errno.h>
 #include <math.h>
 
-static unsigned int fact(unsigned int num) {
-    if (num)
-        return num * fact(num - 1);
+static unsigned int fib(unsigned int num) {
+    if (num == 0 || num == 1)
+        return num;
     else
-        return 1;
+        return fib(num - 2) + fib(num - 1);
 }
 
 int main(int argc, const char *argv[]) {
     uint8_t num;
     
     scanf("%hhu", &num);
-    printf("%u\n", fact(num));
+    printf("%u\n", fib(num));
     
     return 0;
 }
