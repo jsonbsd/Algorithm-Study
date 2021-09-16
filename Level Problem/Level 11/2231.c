@@ -2,7 +2,7 @@
  * main.c
  * C Project
  *
- * Created by ljy on 2021/02/08.
+ * Created by ljy on 2021/09/10.
  * Copyright © 2021 ljy. All rights reserved.
  *
 */
@@ -21,7 +21,7 @@
 #define MAX_DIGIT       9
 #define MIN_GENERATOR   1
 
-static size_t digitlen(unsigned int n) {
+static size_t digitlen(int n) {
     size_t len;
     
     len = 0;
@@ -33,8 +33,8 @@ static size_t digitlen(unsigned int n) {
     return len;
 }
 
-static unsigned int digitsum(unsigned int n) {
-    unsigned int sum;
+static int digitsum(int n) {
+    int sum;
     
     sum = n;
     while (n) {
@@ -45,16 +45,16 @@ static unsigned int digitsum(unsigned int n) {
     return sum;
 }
 
-static inline unsigned int do_min_generator(unsigned int n) {
-    return n - MAX_DIGIT * (unsigned int)digitlen(n) <= 0 ?
-        MIN_GENERATOR : n - MAX_DIGIT * (unsigned int)digitlen(n);
+static inline int do_min_generator(int n) {
+    return n - MAX_DIGIT * (int)digitlen(n) <= 0 ?
+        MIN_GENERATOR : n - MAX_DIGIT * (int)digitlen(n);
 }
 
-static unsigned int min_generator(unsigned int n) {
-    unsigned int gen;
+static int min_generator(int n) {
+    int gen;
     
     gen = do_min_generator(n);
-    while (gen < n) {
+    while (gen <= n) {
         if (digitsum(gen) == n)
             return gen;
         ++gen;
@@ -64,10 +64,10 @@ static unsigned int min_generator(unsigned int n) {
 }
 
 int main(int argc, const char *argv[]) {
-    unsigned int num;
+    int num;
     
     scanf("%u", &num);
     printf("%u\n", min_generator(num));
     
-    return 0;
+    return (EXIT_SUCCESS);
 }
